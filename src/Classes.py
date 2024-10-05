@@ -8,10 +8,10 @@ class Student:
         self.grades = {}
     def rate_lecturer(self, lecturer, course, grade):
         if isinstance(lecturer, Lecturer) and course in lecturer.courses_attached and course in self.courses_in_progress:
-            if course in Lecturer.grades:
-                Lecturer.grades[course] += [grade]
+            if course in lecturer.grades:
+                lecturer.grades[course] += [grade]
             else:
-                Lecturer.grades[course] = [grade]
+                lecturer.grades[course] = [grade]
        
 class Mentor:
     def __init__(self, name, surname):
